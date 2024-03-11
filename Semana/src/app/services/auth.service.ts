@@ -10,8 +10,8 @@ import { env } from '../environment/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly loginUrl = `${env.auth.baseUrl}:signInWithPassword?key=${env.auth.apiKey}`;
-  private readonly signupUrl = `${env.auth.baseUrl}:signUp?key=${env.auth.apiKey}`;
+  private readonly loginUrl = `${env.auth.baseUrl}:signInWithPassword?key=AIzaSyCqwQY7lQhqshM_4i8ABWb8prcaERvVhW8`;
+  private readonly signupUrl = `${env.auth.baseUrl}:signUp?key=AIzaSyCqwQY7lQhqshM_4i8ABWb8prcaERvVhW8`;
 
   usuario = new BehaviorSubject<Usuario>(new Usuario('', '', '', new Date()));
 

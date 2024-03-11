@@ -42,7 +42,7 @@ export class AddSuinoComponent {
 
   ngOnInit() {
     if (this.id) {
-      this.service.getById(this.id).subscribe(suino => {
+      this.service.getById(this.id).subscribe((suino: SuinoViewModel): void => {
         this.suino = suino;
         this.addSuinoForm.patchValue(suino);
       });

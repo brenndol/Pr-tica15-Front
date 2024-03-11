@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Pratica015:build:production"
+              "buildTarget": "fazenda-19a27:build:production"
             },
             "development": {
-              "buildTarget": "Pratica015:build:development"
+              "buildTarget": "fazenda-19a27:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Pratica015:build"
+            "buildTarget": "fazenda-19a27:build"
           }
         },
         "test": {
