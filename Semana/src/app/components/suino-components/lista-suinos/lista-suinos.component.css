@@ -1,0 +1,53 @@
+::ng-deep .p-dataview-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+::ng-deep .p-dataview-header .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .p-dataview-header .filters {
+  display: flex;
+  gap: 5px;
+}
+
+::ng-deep .p-dataview-header .filters .filter-value,
+::ng-deep .p-dataview-header .filters .filter-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+::ng-deep .p-dataview-header .filters .filter-value {
+  flex-grow: 1;
+}
+
+::ng-deep .p-dataview-header .filters .filter-dropdown {
+  width: 235px;
+}
+
+::ng-deep .suinos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+::ng-deep .suinos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: lightgray;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+::ng-deep .suinos-grid .suino {
+  width: 30%;
+  max-width: 450px;
+}
