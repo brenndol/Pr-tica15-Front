@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Pratica015": {
+    "fazenda-19a27": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pratica015",
+            "outputPath": "dist/fazenda-19a27",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [

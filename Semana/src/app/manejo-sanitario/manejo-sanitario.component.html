@@ -1,0 +1,33 @@
+<h2>Cadastrar Nova Sessão de Manejo Sanitário</h2>
+<form (ngSubmit)="CadastrarNovaSessao()">
+    <div class="form-group">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" class="form-control" [(ngModel)]="novaSessao,data" required>
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" class="form-control" [(ngModel)]="novaSessao.descricao" required>
+    </div>
+    <div class="form-group">
+        <label for="animais">Animais:</label>
+        <select id="animais" name="animais" class="form-control" [(ngModel)]="novaSessao.animais" multiple required>
+            <option *ngFor="let animal of animaisDisponiveis" [value]="animal.id">{{ animal.nome }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="atividades">Atividades Planejadas:</label>
+        <textarea id="atividades" name="atividades" class="form-control" [(ngModel)]="novaSessao.atividades" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+
+<!--Histórico de Sessões-->
+<h2>Histórico de Sessões</h2>
+<div *ngFor="let sessao of historicoSessoes" class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ sessao.data }}</h5>
+        <p class="card-text"><strong>Descrição:</strong> {{ sessao.descricao }}</p>
+        <p class="card-text"><strong>Animais:</strong> {{ sessao.animais }}</p>
+        <p class="card-text"><strong>Atividades:</strong> {{ sessao.atividades }}</p>
+    </div>
+</div>

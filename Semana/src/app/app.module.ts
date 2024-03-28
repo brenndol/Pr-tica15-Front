@@ -29,6 +29,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AddPesoComponent } from './components/peso-components/add-peso/add-peso.component';
+import { ManejoSanitarioComponent } from './manejo-sanitario/manejo-sanitario.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AddPesoComponent } from './components/peso-components/add-peso/add-peso
     AuthComponent,
     LoginComponent,
     SignupComponent,
-    AddPesoComponent
+    AddPesoComponent,
+    ManejoSanitarioComponent
   ],
   imports: [
     BrowserModule,
