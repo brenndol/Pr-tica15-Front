@@ -8,4 +8,5 @@ export interface SuinoViewModel {
     dataSaida: Date;
     status: string;
     cadastradoPor: string;
+    nome: string;
 }

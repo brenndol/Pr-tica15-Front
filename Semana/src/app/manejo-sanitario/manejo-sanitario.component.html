@@ -1,8 +1,8 @@
 <h2>Cadastrar Nova Sessão de Manejo Sanitário</h2>
-<form (ngSubmit)="CadastrarNovaSessao()">
+<form (ngSubmit)="cadastrarNovaSessao()">
     <div class="form-group">
         <label for="data">Data:</label>
-        <input type="date" id="data" name="data" class="form-control" [(ngModel)]="novaSessao,data" required>
+        <input type="date" id="data" name="data" class="form-control" [(ngModel)]="novaSessao.data" required>
     </div>
     <div class="form-group">
         <label for="descricao">Descrição:</label>

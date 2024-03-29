@@ -4,13 +4,15 @@ import { SuinoViewModel } from '../models/Suino/SuinoViewModel';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 import { env } from '../environment/environment';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SuinoService {
   private readonly baseUrl = env.api.baseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   public create(suino: SuinoInputModel) {
     return this.http.post<SuinoInputModel>(`${this.baseUrl}/suinos.json`, suino);
@@ -61,4 +63,15 @@ export class SuinoService {
 
     return difDias < 0 ? idade - 1 : idade;
   }
+
+  cadastrarSessao(sessao: any): Observable<any> {
+    return this.http.post<any>('${this.baseUrl}/sessoes', sessao).pipe(
+      catchError(error => {
+        this.toastr.error('Ocorreu um erro ao cadastrar a nova sessão.', 'Erro');
+        console.error(error);
+        throw error;
+      })
+    )
+  }
+  
 }
