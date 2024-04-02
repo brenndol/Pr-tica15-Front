@@ -1,3 +1,4 @@
+<!-- Cadastrar Nova Sessão de Manejo Sanitário -->
 <h2>Cadastrar Nova Sessão de Manejo Sanitário</h2>
 <form (ngSubmit)="cadastrarNovaSessao()">
     <div class="form-group">
@@ -9,10 +10,19 @@
         <input type="text" id="descricao" name="descricao" class="form-control" [(ngModel)]="novaSessao.descricao" required>
     </div>
     <div class="form-group">
-        <label for="animais">Animais:</label>
-        <select id="animais" name="animais" class="form-control" [(ngModel)]="novaSessao.animais" multiple required>
-            <option *ngFor="let animal of animaisDisponiveis" [value]="animal.id">{{ animal.nome }}</option>
-        </select>
+        <label for="brinco">Brinco do Animal:</label>
+        <input type="text" id="brinco" name="brinco" class="form-control" [(ngModel)]="novaSessao.brinco" required>
+    </div>
+    <div class="form-group">
+        <label>Vacinas:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="vacinaRaiva" name="vacinaRaiva" [(ngModel)]="novaSessao.vacinaRaiva">
+            <label class="form-check-label" for="vacinaRaiva">Vacina contra Raiva</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="vacinaRiniteAtrofica" name="vacinaRiniteAtrofica" [(ngModel)]="novaSessao.vacinaRiniteAtrofica">
+            <label class="form-check-label" for="vacinaRiniteAtrofica">Vacina contra Rinite Atrófica</label>
+        </div>
     </div>
     <div class="form-group">
         <label for="atividades">Atividades Planejadas:</label>
@@ -21,13 +31,15 @@
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 
-<!--Histórico de Sessões-->
+<!-- Histórico de Sessões -->
 <h2>Histórico de Sessões</h2>
 <div *ngFor="let sessao of historicoSessoes" class="card">
     <div class="card-body">
         <h5 class="card-title">{{ sessao.data }}</h5>
         <p class="card-text"><strong>Descrição:</strong> {{ sessao.descricao }}</p>
-        <p class="card-text"><strong>Animais:</strong> {{ sessao.animais }}</p>
+        <p class="card-text"><strong>Brinco do Animal:</strong> {{ sessao.brinco }}</p>
         <p class="card-text"><strong>Atividades:</strong> {{ sessao.atividades }}</p>
+        <p class="card-text"><strong>Vacina contra Raiva:</strong> {{ sessao.vacinaRaiva ? 'Sim' : 'Não' }}</p>
+        <p class="card-text"><strong>Vacina contra Rinite Atrófica:</strong> {{ sessao.vacinaRiniteAtrofica ? 'Sim' : 'Não' }}</p>
     </div>
 </div>

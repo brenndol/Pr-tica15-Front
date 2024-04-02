@@ -8,6 +8,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { authGuard } from './guards/auth.guard';
 import { AddPesoComponent } from './components/peso-components/add-peso/add-peso.component';
+import { ManejoSanitarioComponent } from './manejo-sanitario/manejo-sanitario.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
         path: "suinos",
         children: [
           { path: "novo", component: AddSuinoComponent },
+          { path: "manejo", component: ManejoSanitarioComponent},
           { path: "editar/:id", component: AddSuinoComponent },
           { path: "detalhes/:id", component: DetalhesSuinoComponent },
           { path: "", component: ListaSuinosComponent }

@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 import { env } from '../environment/environment';
 import { ToastrService } from 'ngx-toastr';
+import { SessaoViewModel } from '../models/Suino/SessaoViewModel';
 
 
 @Injectable({
@@ -64,14 +65,28 @@ export class SuinoService {
     return difDias < 0 ? idade - 1 : idade;
   }
 
-  cadastrarSessao(sessao: any): Observable<any> {
-    return this.http.post<any>('${this.baseUrl}/sessoes', sessao).pipe(
+  public getALLSessoes(): Observable<SessaoViewModel[]> {
+    return this.http.get<SessaoViewModel[]>(`${this.baseUrl}/sessoes`).pipe(
+      catchError(error => {
+        this.toastr.error('Ocorreu um erro ao carregar as sessões de manejo.', 'Erro');
+        console.error(error);
+        throw error;
+      })
+    );
+  }
+
+  public cadastrarSessao(sessao: any): Observable<any> {
+    console.log('Dados da sessão a serem cadastrados:', sessao); // Adiciona um log para verificar os dados da sessão
+    return this.http.post<any>(`${this.baseUrl}/sessoes`, sessao).pipe(
       catchError(error => {
         this.toastr.error('Ocorreu um erro ao cadastrar a nova sessão.', 'Erro');
         console.error(error);
         throw error;
       })
-    )
+    );
   }
   
+    
 }
+  
+
